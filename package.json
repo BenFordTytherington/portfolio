@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "gsap": "^3.11.3",
+    "three": "^0.134.0",
+    "troisjs": "^0.3.4",
+    "webpack": "^5.74.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-fonts": "^3.0.0-0",
+    "@nuxtjs/tailwindcss": "^6.1.1",
+    "eslint": "^8.26.0",
+    "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "nuxt": "3.0.0-rc.12"
+  }
+}

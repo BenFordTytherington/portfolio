@@ -1,0 +1,1 @@
+export { default } from "file:///home/ben/Studio%20Treble/local%20version/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
