@@ -76,7 +76,7 @@ button h2 {
 }
 
 .trois {
-    @apply invisible md:visible;
+    @apply hidden md:block;
 }
 
 #waves2 {
