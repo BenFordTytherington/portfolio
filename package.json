@@ -10,8 +10,7 @@
     "gsap": "^3.11.3",
     "three": "^0.134.0",
     "troisjs": "^0.3.4",
-    "webpack": "^5.74.0",
-    "nuxt": "^2.15.8"
+    "webpack": "^5.74.0"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.0-0",
