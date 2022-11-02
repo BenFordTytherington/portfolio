@@ -366,7 +366,6 @@ export default {
     let y = 0;
     let mx = 0;
     let my = 0;
-    let mouseOver = false;
     const sceneArea = document.querySelector(".top-section")
     const text = document.querySelector(".text-container")
 
@@ -413,15 +412,12 @@ export default {
         text.style.transition = 'all 2s ease';
         mx = 0;
         my = 0;
-
-        mouseOver = false;
       })
 
       sceneArea.addEventListener("mouseenter", 
       async (e) => {
 
         text.style.transition = 'all 0.5s ease';
-        mouseOver = true;
         x = 0;
         y = 0;
 
