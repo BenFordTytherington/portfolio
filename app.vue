@@ -121,7 +121,7 @@
   <div class="cards-curve-layer"></div>
 
   <div class="skills-container" id="about-section">
-    <h1 class="relative top-32 left-24 text-[10vw] text-zinc-200">
+    <h1 class="relative top-32 left-24 text-[10vw] lg:text-[4rem] text-zinc-200">
       # INTERESTS / ABOUT
     </h1>
     <div class="flex flex-wrap sm:flex-col md:flex-col lg:flex-row justify-center place-items-start pt-48">
@@ -132,7 +132,7 @@
       </p>
       <div class="flex flex-row invisible sm:visible sm:gap-10 md:gap-10 lg:gap-6 sm:justify-center md:justify-between place-items-start h-1/2 sm:p-0 md:p-0 lg:pr-16 sm:w-screen md:w-screen lg:w-1/2">
   
-        <div class="flex flex-col justify-start gap-8 sm:w-fit h-full ">
+        <div class="flex flex-col justify-start gap-8 sm:w-fit lg:w-[15rem] h-full ">
   
           <div class="w-full outline h-fit">
             <div class="h-1/4 outline flex justify-center place-items-center">
@@ -149,7 +149,7 @@
   
         </div>
   
-        <div class="flex flex-col justify-start gap-8 sm:w-fit h-full ">
+        <div class="flex flex-col justify-start gap-8 sm:w-fit lg:w-[15rem] h-full ">
   
           <div class="w-full outline h-fit">
             <div class="h-1/4 outline flex justify-center place-items-center">
@@ -186,7 +186,7 @@
         </div>
   
   
-        <div class="flex flex-col justify-start gap-8 sm:w-fit h-full ">
+        <div class="flex flex-col justify-start gap-8 sm:w-fit lg:w-[15rem] h-full ">
   
           <div class="w-full outline h-1/3">
             <div class="h-1/4 outline flex justify-center place-items-center">
