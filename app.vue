@@ -10,11 +10,11 @@
         BE<span class="lit-l">N</span> <span class="lit-r">F</span>ORD
       </h1>
       <h2 class="description">
-        DEVELOPER & STUDENT
+        DEVELOPER SOMETIMES
       </h2>
     </div>
     <ClientOnly>
-      <Renderer ref="renderer" resize="window">
+      <Renderer ref="renderer" class="trois" resize="window">
         <Camera ref="camera" :position="{z: 17}"/>
         <Scene ref="scene" :background="0x232226">
           <SpotLight color="#FB4A3F" :intensity="0.25" :position="{x: 0, y: 10, z: 0}"/>
@@ -42,7 +42,10 @@
             1.25 - (0.5 * Math.random())
           )"
           >
-            <PhongMaterial />
+            <PhongMaterial :props="{
+              shininess: 60,
+              specular: 0x756565
+            }"/>
           </Sphere>
   
           <!-- right side large -->
@@ -57,7 +60,10 @@
             1.5 - (0.5 * Math.random())
           )"
           >
-            <PhongMaterial />
+            <PhongMaterial :props="{
+              shininess: 60,
+              specular: 0x756565
+            }"/>
           </Sphere>
         
           <!-- left side medium -->
@@ -72,7 +78,10 @@
               (0.5 * Math.random() + 0.25)
             )"
             >
-            <PhongMaterial />
+            <PhongMaterial :props="{
+              shininess: 60,
+              specular: 0x756565
+            }"/>
           </Sphere>
   
           <!-- right side medium -->
@@ -87,14 +96,20 @@
               (0.75 * Math.random() + 0.15)
             )"
             >
-            <PhongMaterial />
+            <PhongMaterial :props="{
+              shininess: 60,
+              specular: 0x756565
+            }" />
           </Sphere>
   
         </Scene>
-        <EffectComposer>
-          <RenderPass />
-          <UnrealBloomPass :strength="1.9" :threshold="0.68"/>
-        </EffectComposer>
+          <EffectComposer >
+            <RenderPass />
+            <SMAAPass />
+            <HalftonePass ref="halftone" :scatter="3" :rotate-r="1"/>
+            <UnrealBloomPass :strength="1.5" :threshold="0.63"/>
+            <BokehPass ref="bokeh" :maxblur="0.001" :aperture="50"/>
+          </EffectComposer>
         </Renderer>
     </ClientOnly>
   </div>
@@ -106,115 +121,84 @@
   <div class="cards-curve-layer"></div>
 
   <div class="skills-container" id="about-section">
-    <h1 class="relative top-32 left-24 text-[4rem] text-zinc-200">
-      # SKILLS / ABOUT
+    <h1 class="relative top-32 left-24 text-[10vw] text-zinc-200">
+      # INTERESTS / ABOUT
     </h1>
-    <div class="flex flex-row justify-center place-items-start pt-48">
+    <div class="flex flex-wrap sm:flex-col md:flex-col lg:flex-row justify-center place-items-start pt-48">
 
-      <p class="inline-block top-64 px-24 text-lg text-zinc-200 w-1/2 break-words">
+      <p class="inline-block top-64 px-24 text-lg text-zinc-200 sm:w-fit md:w-fit lg:w-1/2 break-words">
         Chartreuse intelligentsia mlkshk, la croix echo park hella meggings bespoke vibecession hashtag air plant four loko. Stumptown mixtape kale chips, sus meh bruh same live-edge tumblr woke snackwave knausgaard ennui health goth semiotics. Copper mug freegan listicle coloring book 3 wolf moon snackwave hella portland farm-to-table. Coloring book banjo quinoa heirloom hoodie cloud bread.
-        Banjo praxis XOXO, cred readymade cray austin stumptown hammock food truck vinyl farm-to-table offal. Shabby chic waistcoat bespoke typewriter, meggings thundercats ascot lumbersexual DIY kinfolk master cleanse enamel pin swag. Occupy pork belly hammock vaporware waistcoat JOMO. 8-bit kinfolk letterpress scenester hell of sustainable 3 wolf moon craft beer hexagon tousled XOXO austin messenger bag aesthetic. Stumptown DSA chillwave, meditation shabby chic yr kickstarter cardigan plaid artisan beard mixtape tote bag humblebrag. Typewriter helvetica fixie, bespoke humblebrag pinterest four loko asymmetrical etsy fam wolf. Brooklyn viral biodiesel, keffiyeh venmo bodega boys pour-over JOMO adaptogen franzen schlitz pickled retro intelligentsia man braid.
+        Banjo praxis XOXO, cred readymade cray austin stumptown hammock food truck vinyl farm-to-table offal. Shabby chic waistcoat bespoke typewriter, meggings thundercats ascot lumbersexual DIY kinfolk master cleanse enamel pin swag. Occupy pork belly hammock vaporware waistcoat JOMO. 
       </p>
-      <div class="flex flex-row justify-between place-items-start h-1/2 pr-24 w-1/2">
+      <div class="flex flex-row invisible sm:visible sm:gap-10 md:gap-10 lg:gap-6 sm:justify-center md:justify-between place-items-start h-1/2 sm:p-0 md:p-0 lg:pr-16 sm:w-screen md:w-screen lg:w-1/2">
   
-        <div class="flex flex-col justify-start gap-8 w-1/4 h-full">
+        <div class="flex flex-col justify-start gap-8 sm:w-fit h-full ">
   
-          <div class="w-full outline h-1/3">
+          <div class="w-full outline h-fit">
             <div class="h-1/4 outline flex justify-center place-items-center">
               <h1 class=" text-left">
-                SKILL TYPE
+                DATABASES
               </h1>
             </div>
-            <div class="min-h-3/4 place-items-center grid grid-cols-3">
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
+            <div class="h-3/4 place-items-center flex flex-col">
+                <p class="skill">FaunaDB</p>
+                <p class="skill">Redis</p>
+                <p class="skill">SurrealDB</p>
             </div>
           </div>
   
         </div>
   
-        <div class="flex flex-col justify-start gap-8 w-1/4 h-full">
+        <div class="flex flex-col justify-start gap-8 sm:w-fit h-full ">
   
-          <div class="w-full outline h-1/3">
+          <div class="w-full outline h-fit">
             <div class="h-1/4 outline flex justify-center place-items-center">
               <h1 class=" text-left">
-                SKILL TYPE
+                LANGUAGES
               </h1>
             </div>
-            <div class="min-h-3/4 place-items-center grid grid-cols-3">
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
+            <div class="h-3/4 place-items-center grid grid-cols-2">
+                <p class="skill">Python</p>
+                <p class="skill">JavaScript</p>
+                <p class="skill">Rust</p>
+                <p class="skill">Faust</p>
+                <p class="skill">C#</p>
+                <p class="skill">Kotlin</p>
             </div>
           </div>
   
-          <div class="w-full outline h-1/3">
+          <div class="w-fit outline h-1/3">
             <div class="h-1/4 outline flex justify-center place-items-center">
               <h1 class=" text-left">
-                SKILL TYPE
+                FRAMEWORKS
               </h1>
             </div>
-            <div class="min-h-3/4 place-items-center grid grid-cols-3">
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
+            <div class="h-3/4 place-items-center grid grid-cols-3">
+                <p class="skill">Unity</p>
+                <p class="skill">FastAPI</p>
+                <p class="skill">KTor</p>
+                <p class="skill">Three</p>
+                <p class="skill">Vue</p>
+                <p class="skill">Nuxt3</p>
             </div>
           </div>
   
         </div>
   
   
-        <div class="flex flex-col justify-start gap-8 w-1/4 h-full">
+        <div class="flex flex-col justify-start gap-8 sm:w-fit h-full ">
   
           <div class="w-full outline h-1/3">
             <div class="h-1/4 outline flex justify-center place-items-center">
               <h1 class=" text-left">
-                SKILL TYPE
+                COMPUTER SCIENCE
               </h1>
             </div>
-            <div class="min-h-3/4 place-items-center grid grid-cols-3">
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
+            <div class="h-3/4 place-items-center flex flex-col">
+                <p class="skill">Cryptography</p>
+                <p class="skill">Blockchain</p>
             </div>
           </div>
-  
-          <div class="w-full outline h-1/3">
-            <div class="h-1/4 outline flex justify-center place-items-center">
-              <h1 class=" text-left">
-                SKILL TYPE
-              </h1>
-            </div>
-            <div class="min-h-3/4 place-items-center grid grid-cols-3">
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-            </div>
-          </div>
-  
-          <div class="w-full outline h-1/3">
-            <div class="h-1/4 outline flex justify-center place-items-center">
-              <h1 class=" text-left">
-                SKILL TYPE
-              </h1>
-            </div>
-            <div class="min-h-3/4 place-items-center grid grid-cols-3">
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-                <p class="skill">skill</p>
-            </div>
-          </div>
-  
   
         </div>
   
@@ -226,6 +210,7 @@
 </template>
 <style>
   @import 'styles.scss';
+  @import "https://fonts.googleapis.com/css?family=JetBrains Mono";
 </style>
 
 <script>
@@ -253,6 +238,9 @@ import {
   Scene,
   MatcapMaterial,
   AmbientLight,
+  HalftonePass,
+  SMAAPass,
+  BokehPass
 
 } from 'troisjs'
 import { gsap } from 'gsap';
@@ -306,19 +294,25 @@ export default {
       zStart: 17,
       posts: [
         {
-          title: 'PROJECT 1',
-          content: 'Subway tile palo santo meh VHS marfa, sartorial hammock sustainable organic bruh. Lo-fi seitan vexillologist truffaut pinterest ugh. Street art kogi fam vibecession, la croix tonx bruh woke.',
-          tech: 'NUXT, VUE, TAILWIND'
+          title: 'PORTFOLIO SITE',
+          content_1: 'This website. Made using Nuxt3 for work experience at Studio Treble.',
+          content_2: 'Styles are from Tailwind and the top section feautres a 3D scene usign TroisJS, a wrapper for ThreeJS.',
+          tech: 'NUXT3, VUE, TAILWIND, TroisJS',
+          link: 'http://localhost:3000/#page-start'
         },
         {
           title: 'PROJECT 2',
-          content: 'baby kitsch actually beard 90s, mustache pickled cardigan letterpress mixtape bitters tacos subway tile knausgaard ascot blue bottle. Put a bird on it yes plz wolf marfa leggings flannel, bodega boys cornhole fingerstache af listicle',
-          tech: 'RUST'
+          content_1: 'baby kitsch actually beard 90s, mustache pickled cardigan letterpress mixtape bitters tacos.',
+          content_2: 'Subway tile knausgaard ascot blue bottle. Put a bird on it yes plz wolf marfa leggings flannel, bodega boys cornhole fingerstache af listicle',
+          tech: 'RUST',
+          link: ''
         },
         {
-          title: 'PROJECT 3',
-          content: 'Put a bird on it enamel pin hammock, bicycle rights knausgaard semiotics kickstarter mukbang authentic quinoa ugh keffiyeh XOXO cronut. Tumblr tote bag semiotics, try-hard bitters mustache hammock',
-          tech: 'PYTHON, FAUNADB, FASTAPI'
+          title: 'ONE VOICE / SINGER SIMULATOR',
+          content_1: 'A game made using unity and C# based on my computer science teacher as an end of year gift.',
+          content_2: 'It is an action game based on waves of enemies and features 2 areas and a final boss. Made in 2 weeks with my friend Cole.',
+          tech: 'UNITY, C#',
+          link: 'https://left-hand-gang.itch.io/one-voice'
         }
       ]
     }
@@ -346,7 +340,10 @@ export default {
     Scene,
     MatcapMaterial,
     AmbientLight,
-    Card
+    Card,
+    HalftonePass,
+    BokehPass,
+    SMAAPass
   },
   mounted() {
 
@@ -354,7 +351,7 @@ export default {
     cards.forEach(card => {
       gsap.from(card, { 
         x: -800,
-        ease: 'elastic',
+        ease: 'power3',
         duration: 2,
         scrollTrigger: {
           trigger: card,
@@ -367,6 +364,9 @@ export default {
     let tPeriodic = 0;
     let x = 0;
     let y = 0;
+    let mx = 0;
+    let my = 0;
+    let mouseOver = false;
     const sceneArea = document.querySelector(".top-section")
     const text = document.querySelector(".text-container")
 
@@ -375,6 +375,9 @@ export default {
       const ico = this.$refs.icosahedron;
       const cam = this.$refs.camera.camera;
       const light = this.$refs.pointLight.light;
+      const half = this.$refs.halftone;
+
+      half.pass.material.blending = 2;
 
       for (let i = 1; i < 9; i++){
         let refName = 'ballMedium' + i
@@ -400,29 +403,39 @@ export default {
 
       sceneArea.addEventListener("mousemove", 
           (e) => {
-            x = (window.innerWidth / 2 - e.pageX) / 25;
-            y = (window.innerHeight / 2 - e.pageY) / 25;
+            mx = (window.innerWidth / 2 - e.pageX) / 25;
+            my = (window.innerHeight / 2 - e.pageY) / 25;
+
           })
 
       sceneArea.addEventListener("mouseleave", 
       (e) => {
         text.style.transition = 'all 2s ease';
-        x = 0;
-        y = 0;
+        mx = 0;
+        my = 0;
+
+        mouseOver = false;
       })
 
       sceneArea.addEventListener("mouseenter", 
       async (e) => {
 
         text.style.transition = 'all 0.5s ease';
+        mouseOver = true;
+        x = 0;
+        y = 0;
 
         await this.sleep(1000)
         text.style.transition = '';
 
       })
 
+      let lastFrame = Date.now();
+
       renderer.onBeforeRender(
         () => {
+          let now = Date.now();
+          let dTime = (now - lastFrame) / 1000;
 
           cam.position.x = x / this.xRotationScale * this.zStart;
           cam.rotation.y = x / this.xRotationScale;
@@ -430,7 +443,9 @@ export default {
           cam.position.y =  - y / this.yRotationScale * this.zStart;
           cam.rotation.x = y / this.yRotationScale;
 
-          text.style.transform = `rotateX(${y / 1.5}deg) rotateY(${-(x / 2)}deg) translateX(4rem) translateY(2rem)`
+          half.pass.uniforms.radius = {value: (2 * Math.sin(t / 40)) + 1}
+
+          text.style.transform = `rotateX(${y / 1.5}deg) rotateY(${-(x / 2)}deg) translateX(4vw) translateY(4vh)`
           
           for (const ball of this.mediumSpheres){
             ball.mesh[0].mesh.position.y += this.animMediumMagY * Math.sin(this.animMediumFreqY * t + (this.animMediumVarianceY * ball.offset));
@@ -456,6 +471,11 @@ export default {
 
           t += 0.025
           tPeriodic = (t % 8)
+
+          x = this.lerp(x, mx, (t / 4) * dTime);
+          y = this.lerp(y, my, (t / 4) * dTime);
+
+          lastFrame = Date.now();
         }
       )
     }, 100);

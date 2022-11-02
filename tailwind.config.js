@@ -12,7 +12,9 @@ module.exports = {
         main: '#232226',
         card: '#2F2F2F',
         cardHeader: '#3C3C3F',
-  
+      },
+      screens: {
+        'sm': '350px'
       }
     }
   }

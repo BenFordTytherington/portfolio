@@ -1,7 +1,7 @@
 module.exports = {
   "theme": {
     "screens": {
-      "sm": "640px",
+      "sm": "350px",
       "md": "768px",
       "lg": "1024px",
       "xl": "1280px",
@@ -3521,7 +3521,7 @@ module.exports = {
       "max": "max-content",
       "fit": "fit-content",
       "prose": "65ch",
-      "screen-sm": "640px",
+      "screen-sm": "350px",
       "screen-md": "768px",
       "screen-lg": "1024px",
       "screen-xl": "1280px",
