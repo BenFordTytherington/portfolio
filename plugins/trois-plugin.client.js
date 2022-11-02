@@ -1,4 +1,4 @@
-import { TroisJSVuePlugin } from 'troisjs/build/trois'
+import { TroisJSVuePlugin } from 'troisjs'
 
 export default defineNuxtPlugin(nuxtApp => {
     nuxtApp.vueApp.use(TroisJSVuePlugin)
